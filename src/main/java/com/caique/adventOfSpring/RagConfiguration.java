@@ -13,6 +13,7 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.ai.vectorstore.filter.Filter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
@@ -35,7 +36,7 @@ public class RagConfiguration {
 
     @Bean
     @ConditionalOnProperty(prefix = "app.rag", name = "enabled", havingValue = "true")
-    VectorStore simpleVectorStore(EmbeddingModel embeddingModel) {
+    VectorStore simpleVectorStore(@Qualifier("ollamaEmbeddingModel") EmbeddingModel embeddingModel) {
         try {
             var simpleVectorStore = SimpleVectorStore.builder(embeddingModel).build();
             var vectorStoreFile = getVectoreStoreFile();

@@ -1,6 +1,6 @@
 app:
   rag:
-    enabled: false
+    enabled: true
 
 spring:
   autoconfigure:
@@ -8,12 +8,14 @@ spring:
       - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
       - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
   ai:
-    openai:
-      base-url: https://api.groq.com/openai
-      api-key: ${GROQ_API_KEY}
+    ollama:
+      base-url: http://localhost:11434
       chat:
         options:
-          model: qwen/qwen3.8-27b
+          model: llama3.1
+      embedding:
+        options:
+          model: nomic-embed-text
   application:
     name: adventOfSpring
   cache:
