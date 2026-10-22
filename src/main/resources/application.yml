@@ -1,6 +1,6 @@
 app:
   rag:
-    enabled: true
+    enabled: false
 
 spring:
   autoconfigure:
@@ -13,10 +13,7 @@ spring:
       api-key: ${GROQ_API_KEY}
       chat:
         options:
-          model: llama-3.1-8b-instant
-      embedding:
-        options:
-          model: text-embedding-3-small
+          model: qwen/qwen3.8-27b
   application:
     name: adventOfSpring
   cache:
