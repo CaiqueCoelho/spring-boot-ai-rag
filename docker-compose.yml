@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  db:
+    image: "postgres:15.1"
+    container_name: db
+    environment:
+      - POSTGRES_USER=customer
+      - POSTGRES_PASSWORD=customer
+    ports:
+      - "5432:5432"
+
+  app:
+    image: adventofcode:v1
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: customer
+      SPRING_DATASOURCE_PASSWORD: customer
+    ports:
+      - "8080:8181"

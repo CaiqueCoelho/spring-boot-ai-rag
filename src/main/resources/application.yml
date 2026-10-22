@@ -1,0 +1,78 @@
+app:
+  rag:
+    enabled: true
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+  ai:
+    openai:
+      base-url: https://api.groq.com/openai
+      api-key: ${GROQ_API_KEY}
+      chat:
+        options:
+          model: llama-3.1-8b-instant
+      embedding:
+        options:
+          model: text-embedding-3-small
+  application:
+    name: adventOfSpring
+  cache:
+    cache-names: getProductById
+    type: simple
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/customer
+    username: customer
+    password: customer
+  jpa:
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8181
+
+springdoc:
+  show-actuator: true
+
+my:
+  properties:
+    url: https://www.xavierbouclet.com
+    activated: true
+    timeout: 3600
+
+management:
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+  endpoint:
+    info:
+      access: read_only
+    loggers:
+      access: unrestricted
+    metrics:
+      access: unrestricted
+  endpoints:
+    web:
+      exposure:
+        include: health,info,loggers,metrics
+
+info:
+  app:
+    name: Advent of Code
+    description: A Spring Boot app for DAY 19 of Advent of Spring Boot
+  dev:
+    name: Caique Coelho
+  blog:
+    url: discboard.com.bt

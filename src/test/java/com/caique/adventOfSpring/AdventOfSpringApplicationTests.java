@@ -1,0 +1,13 @@
+package com.caique.adventOfSpring;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class AdventOfSpringApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

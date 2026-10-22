@@ -1,0 +1,38 @@
+= Customer API
+:toc: left
+:snippets: ../../target/generated-snippets
+
+== Overview
+
+This project generates API documentation from Spring REST Docs snippets.
+
+== Specification
+
+In addition to the documentation on this page, you can download an OpenAPI spec file:
+
+++++
+<a href="openapi-3.0.yml" download style="display:inline-block;padding:0.5em 1em;background:#2156a5;color:#fff;border-radius:4px;text-decoration:none;">Download as OpenAPI 3.0 YAML</a>
+++++
+
+== Resources
+
+=== Customers
+
+==== Get all customers
+
+A `GET` request is used to retrieve all customers.
+
+ifdef::snippets[]
+===== Curl request
+include::{snippets}/get-all-customers/curl-request.adoc[]
+
+===== HTTP request
+include::{snippets}/get-all-customers/http-request.adoc[]
+
+===== HTTP response
+include::{snippets}/get-all-customers/http-response.adoc[]
+endif::snippets[]
+
+ifndef::snippets[]
+This page will include the generated REST Docs snippets once they are produced by `mvn test`.
+endif::snippets[]

@@ -1,0 +1,2 @@
+INSERT INTO CUSTOMER (id, first_name, last_name) VALUES('57dd4c28-fc17-4ffc-942c-914d90404e68', 'Caique', 'Coelho');
+INSERT INTO CUSTOMER (id, first_name, last_name) VALUES('2ac6a20b-a2e7-4af4-91be-36ad3004a09f', 'Mariana', 'Coelho');
